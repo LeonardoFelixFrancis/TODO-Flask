@@ -12,6 +12,8 @@ Para instalar e executar o projeto:
    `flask db upgrade`
 9) Rode o projeto Flask com `flask run`
 
+##### Versão python usada no desenvolvimento: 3.11.9
+
 ### POST /user/login
 
 Input: {  "email": string, "password": string" }
