@@ -4,7 +4,7 @@ from api.utils.status_code import HttpStatus
 from api.exceptions.custom_exception import CustomException
 from api.services.authentication_service import AuthenticationService
 
-todo = Blueprint('task', __name__, url_prefix='/task')
+todo = Blueprint('task', __name__, url_prefix='/api/task')
 
 @todo.before_request
 def authenticate():
