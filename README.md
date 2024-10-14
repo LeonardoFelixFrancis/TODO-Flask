@@ -8,6 +8,7 @@ Para instalar e executar o projeto:
 
 5) Instale todas as dependências do projeto com `pip install -r requirements.txt`
 6) Crie um arquivo .env e adicione a variável DATABASE_URL contendo a connection string do banco de dados postgress, ex: DATABASE_URL='postgresql://postgres:123@localhost/my_todo'
+   6.1) É necessário ter o postgress rodando localmente, e criar um banco de dados, após isso é só trocar o 'my_todo' da connection string acima pelo nome do banco de dados que foi criado.
 8) Rode as migrations com:
    `flask db upgrade`
 9) Rode o projeto Flask com `flask run`
