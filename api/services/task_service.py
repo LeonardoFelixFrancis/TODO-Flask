@@ -93,18 +93,18 @@ class TaskService:
             Faz as validações básicas de input dos campos Título e descrição
         '''
 
-        if title is None or len(title) == 0:
-            raise CustomException('O Título de uma tarefa é um campo obrigatório')
-        
-        if description is None or len(description) == 0:
-            raise CustomException('A descrição de uma tarefa é um campo obrigatório')
-        
         if not isinstance(title, str):
             raise CustomException('O Título de uma tarefa precisa ser um campo do tipo Texto')
         
         if not isinstance(description, str):
             raise CustomException('O Campo descrição precisa ser um campo do tipo Texto')
 
+        if title is None or len(title.strip()) == 0:
+            raise CustomException('O Título de uma tarefa é um campo obrigatório')
+        
+        if description is None or len(description.strip()) == 0:
+            raise CustomException('A descrição de uma tarefa é um campo obrigatório')
+        
         if len(title) > 55:
             raise CustomException('O Título de uma tarefa não pode ter mais de 55 caracteres')
         
