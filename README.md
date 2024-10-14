@@ -75,3 +75,13 @@ Responses:
 HTTP 200: {"data": [{"description": string, "title":string, "id":int},...], "message": string, "status_code": int}, 
 HTTP 400: { "data": null, "logout": false, "message": string, "status_code": int}
 
+### Considerações
+
+#### Autenticação:
+Resolvi fazer um sistema de autenticação "completo" criando sessões e utilizando um token para fazer a validação dessa sessão, nesse canso mantendo o token como uma chave de acesso a sessão guardada no banco de dados  
+o token não é enviado por um cookie http-only o que pode tornar o sistema vulnerável a um XSS (Cross-Site Scripting) nesse caso a utilização de um cookie http-only além de estratégias anti XSRF (Cross Site Request Forgery)
+tornaria a autenticação do sistema mais segura.
+
+
+
+
