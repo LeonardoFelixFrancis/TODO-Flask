@@ -1,6 +1,9 @@
 from enum import Enum
 
 class HttpStatus(Enum):
+    '''
+        Enum para encapsular os códigos de retorno HTTP
+    '''
 
     OK = 200
     CREATED = 201

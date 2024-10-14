@@ -6,7 +6,9 @@ from api.schemas.task_schema import Task
 class TaskService:
 
     """
-        Classe contendo todos os serviços associados as Tarefas 
+        Classe contendo todos os serviços associados as Tarefas
+
+        No seu construtor cria uma instância de um TaskRepository para ser utilizado como self.infrastructure.
     """
 
     def __init__(self):
@@ -87,6 +89,10 @@ class TaskService:
 
     def __validate_common_fields(self, title:str, description:str):
 
+        '''
+            Faz as validações básicas de input dos campos Título e descrição
+        '''
+
         if title is None or len(title) == 0:
             raise CustomException('O Título de uma tarefa é um campo obrigatório')
         
@@ -106,6 +112,10 @@ class TaskService:
             raise CustomException('A Descrição de uma tarefa não pode ter mais de 255 caracteres')
         
     def __validate_task_id(self, task_id:int):
+
+        '''
+            Valida o input do Id de uma tarefa
+        '''
 
         if task_id is None:
             raise CustomException('O Id de uma tarefa precisa ser informado')

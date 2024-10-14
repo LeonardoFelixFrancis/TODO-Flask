@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request
 from api.services.authentication_service import AuthenticationService
 from api.utils.status_code import HttpStatus
 
-auth = Blueprint('auth', __name__, url_prefix='/user')
+auth = Blueprint('auth', __name__, url_prefix='/api/user')
 
 @auth.post('/register/')
 def register():

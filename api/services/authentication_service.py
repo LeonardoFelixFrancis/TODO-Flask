@@ -11,7 +11,19 @@ import re
 class AuthenticationService:
 
     '''
-    Classe contendo os serviços de autenticação do sistema
+    Classe contendo os serviços de autenticação do sistema.
+
+    A Autenticação funciona utilizando uma sessão que é mantida no banco de dados, onde um token faz a validação dessa sessão.
+
+    Exemplo:
+        1) Usuário envia o token de acesso pelo header Authorization
+        2) Uma função que é executada antes do código principal da Api, pega esse token, verifica se alguma sessão está associada a esse token.
+            SE SIM:
+                Valida se o tempo da sessão não expirou, caso o tenha, retorna um erro.
+                Pega o usuário guardado no banco e o guarda em uma variável global acessível a Api principal, autenticando o usuário
+            SE NÃO:
+                Retorna um erro informando que nenhuma sessão válida está associada ao usuário.
+
     '''
 
     def __init__(self):
